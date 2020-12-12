@@ -37,15 +37,72 @@ html {
       width: 100%;
       max-width: 225px; 
   }
-  
+
+ .row::after {
+    content:"";
+    display: table;
+    clear:both;
+ } 
+
+ [class*='col-'] { /* Put this on every element that has class with 'col-'*/
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+    min-height: 1px;
+ }
+
+ .col-1-2,
+ .col-1-4 {
+     background-color: aliceblue;
+ }
+ .col-2 {
+    background-color: lightgreen
+ }
+ .col-3 {
+    background-color: lightsalmon;
+ }
+ .col-4 {
+    background-color: lightpink;
+ }
+ .col-5 {
+    background-color: lightcyan;
+ }
   /* grid system -- mobile first! */
   
   
   /* Mobile Landscape Screen Sizes */
   @media only screen and (min-width: 480px)  {
-  
+    [class*='col-'] {
+		margin-right: 0;
+        min-height: 1px;
+        float: left;
+	}
+	.col-1-2,
+	.col-2 {
+		width: 44%;
+	}
+	.col-1-4,
+	.col-3,
+	.col-4 {
+		width: 92%;
+    }
+    .col-5 {
+        width: 28%;
+    }
   }
   /* Desktop screen Sizes */
   @media only screen and (min-width: 768px) {
-  
+    .col-1-2, 
+	.col-1-4 {
+		width: 20%;
+	}
+	.col-2 {
+		width: 44%;
+	}
+	.col-3 {
+		width: 68%;
+	}
+	.col-4 {
+		width: 92%;
+	}
   }
