@@ -8,6 +8,8 @@ html {
     
     width: ===>  ( content+padding+border) all together  
     It is not inhirited 
+
+    Best source for this one is https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
     
     */
   }
@@ -41,11 +43,11 @@ html {
  .row::after {
     content:"";
     display: table;
-    clear:both;
+    clear:both; /* Clears all the floats from left and right aka pushes them down*/
  } 
 
  [class*='col-'] { /* Put this on every element that has class with 'col-'*/
-    width: 92%;
+    width: 92%;  /* This one is for the mobile version where we want just one item per row*/
     margin-left: 4%;
     margin-right: 4%;
     min-height: 1px;
@@ -67,11 +69,10 @@ html {
  .col-5 {
     background-color: lightcyan;
  }
-  /* grid system -- mobile first! */
   
   
   /* Mobile Landscape Screen Sizes */
-  @media only screen and (min-width: 480px)  {
+  @media only screen and (min-width: 480px)  { /* only screen because we have olso the print versions */
     [class*='col-'] {
 		margin-right: 0;
         min-height: 1px;
@@ -79,7 +80,7 @@ html {
 	}
 	.col-1-2,
 	.col-2 {
-		width: 44%;
+        width: 44%;
 	}
 	.col-1-4,
 	.col-3,
@@ -94,7 +95,16 @@ html {
   @media only screen and (min-width: 768px) {
     .col-1-2, 
 	.col-1-4 {
-		width: 20%;
+        width: 20%;
+        /* The math goes 
+        4 items in col-1-2 = 4 * 20+4(margin-right) = 24 * 4 = 96% < 100%
+        So the items will fit, the max number is
+        100 - numberOfElement * (marginRight + width) >=0
+        100 - 4 * (4 + width) >=0
+        100-16-4 * width >= 0
+        - 4 * width >= - 84
+        width <= 21
+        */
 	}
 	.col-2 {
 		width: 44%;
