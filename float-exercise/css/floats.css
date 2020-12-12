@@ -2,6 +2,14 @@
 https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 html {
     box-sizing: border-box;
+    
+    /*  
+    Different then content-box
+    
+    width: ===>  ( content+padding+border) all together  
+    It is not inhirited 
+    
+    */
   }
   /* inherit border-box on all elements in the universe and before and after
    */
