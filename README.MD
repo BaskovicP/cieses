@@ -1,0 +1,1 @@
+# Just a simple set of frontend exercises to provide accountability
