@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Flexbox</title>
-	<link href="css/boxes.css" rel="stylesheet">
-</head>
-<body>
-	<ul>
-		<li class="flex1">1 Lorem ipsum dolor sit amet.</li>
-		<li class="flex1">2 Illum facere saepe nam praesentium.</li>
-		<li class="flex2">3 Vero quia possimus unde sint!</li>
-		<li class="flex1">4 Cupiditate, ab molestias aliquam cum.</li>
-		<li class="flex2">5 Recusandae inventore distinctio reiciendis id.</li>
-		<li class="flex1">6 Laboriosam iure saepe distinctio, sunt.</li>
-	</ul>
-			
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexbox</title>
+    <link href="css/boxes.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li class="flex1">1 Lorem ipsum dolor sit amet.</li>
+      <li class="flex1">2 Illum facere saepe nam praesentium.</li>
+      <li class="flex2">3 Vero quia possimus unde sint!</li>
+      <li class="flex1">4 Cupiditate, ab molestias aliquam cum.</li>
+      <li class="flex2">5 Recusandae inventore distinctio reiciendis id.</li>
+      <li class="flex1">6 Laboriosam iure saepe distinctio, sunt.</li>
+    </ul>
+
+    <div class="button-container-justify">
+      <button>flex-start</button>
+      <button>flex-end</button>
+      <button>center</button>
+      <button>space-between</button>
+      <button>space-around</button>
+      <button>space-evenly</button>
+      <button>initial</button>
+      <button>inherit</button>
+    </div>
+
+    <script>
+      $.getScript("../useful_functions.js", function () {
+        $(document).ready(function () {
+          const liElements = $("ul");
+          const liButtons = $(".button-container-justify > button");
+          applyStyle(liButtons, liElements, "justify-content");
+        });
+      });
+    </script>
+  </body>
 </html>
