@@ -5,7 +5,18 @@ ul {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-	border: 1px dotted red;
+    border: 3px dotted red;
+    display: flex;
+    flex-direction: row; /*Also the default value*/
+    flex-wrap: wrap; 
+    /* The items are wide as the content 
+    and moves the box down if you resize the window 
+    The default value is nowrap
+    */
+
+    flex-flow: row nowrap; /* Shorthand for the 10. and 11. line */
+
+
 }
 li {
 	border: 1px solid #999;
